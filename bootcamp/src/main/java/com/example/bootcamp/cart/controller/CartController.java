@@ -45,11 +45,38 @@ public class CartController {
     @GetMapping("/cart/{cartId}")
 	public CartRecord getCart(@PathVariable UUID cartId) {
         log.info("Getting Cart");
-        Cart c = cartService.getCart(cartId);
+        Cart c;
+        try {
+            c = cartService.getCart(cartId);    
+        } catch (Exception e) {
+            log.error("Unable to get Cart", e);
+            throw new ResponseStatusException(
+                HttpStatus.NOT_FOUND, "cart not found"
+            );
+        }
 
         CartRecord cr = new CartRecord(c);
         log.info("[CartID]["+cr.ID().toString()+"]");
 		return cr;
+	}
+
+    @DeleteMapping("/cart/{cartId}")
+	public void deleteCart(@PathVariable UUID cartId) {
+        log.info("Getting Cart");
+        Cart c;
+        try {
+            c = cartService.getCart(cartId);    
+        } catch (Exception e) {
+            log.error("Unable to get Cart", e);
+            throw new ResponseStatusException(
+                HttpStatus.NOT_FOUND, "cart not found"
+            );
+        }
+
+        cartService.deleteCart(cartId);
+        
+        log.info("Cart Deleted [CartID]["+cartId+"]");
+		return;
 	}
 
     @PostMapping(path= "/cart/{cartId}/item", consumes = "application/json")
