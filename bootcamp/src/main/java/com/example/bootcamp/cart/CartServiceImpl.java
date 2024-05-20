@@ -5,6 +5,8 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.bootcamp.item.Item;
+
 @Service
 public class CartServiceImpl implements CartService{
     @Autowired
@@ -34,4 +36,10 @@ public class CartServiceImpl implements CartService{
     public void deleteCart(UUID id){
         cartRepository.deleteById(id);
     }; 
+
+    @Override
+    public Cart addItem(UUID id, Item item){
+        Cart c = this.getCart(id);
+        return c.addItem(item);
+    }
 }

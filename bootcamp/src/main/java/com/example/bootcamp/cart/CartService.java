@@ -2,6 +2,8 @@ package com.example.bootcamp.cart;
 
 import java.util.UUID;
 
+import com.example.bootcamp.item.Item;
+
 public interface CartService {
     // New operation 
     Cart newCart(); 
@@ -14,4 +16,7 @@ public interface CartService {
   
     // Delete operation 
     void deleteCart(UUID id); 
+
+    // Add Item
+    Cart addItem(UUID id, Item item);
 }
