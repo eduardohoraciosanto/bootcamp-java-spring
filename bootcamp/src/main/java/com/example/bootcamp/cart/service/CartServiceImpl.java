@@ -46,4 +46,12 @@ public class CartServiceImpl implements CartService{
         this.saveCart(c);
         return c;
     }
+
+    @Override
+    public Cart removeItem(UUID id, Item item){
+        Cart c = this.getCart(id);
+        c = c.removeItem(item);
+        this.saveCart(c);
+        return c;
+    }
 }

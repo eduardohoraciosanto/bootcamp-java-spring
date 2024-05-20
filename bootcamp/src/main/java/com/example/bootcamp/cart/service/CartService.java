@@ -20,4 +20,7 @@ public interface CartService {
 
     // Add Item
     Cart addItem(UUID id, Item item);
+
+    // Remove Item
+    Cart removeItem(UUID id, Item item);
 }

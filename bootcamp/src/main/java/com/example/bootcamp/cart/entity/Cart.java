@@ -51,4 +51,13 @@ public class Cart {
         return this;
     }
 
+    public Cart removeItem(Item i){
+        if (this.items == null){
+            return this;
+        }
+        
+        this.items.remove(i);
+        return this;
+    }
+
 }
