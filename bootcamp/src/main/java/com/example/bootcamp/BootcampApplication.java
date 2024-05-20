@@ -2,8 +2,10 @@ package com.example.bootcamp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
+@EnableJpaRepositories(basePackages = "com.example.bootcamp.cart")
 public class BootcampApplication {
 
 	public static void main(String[] args) {
