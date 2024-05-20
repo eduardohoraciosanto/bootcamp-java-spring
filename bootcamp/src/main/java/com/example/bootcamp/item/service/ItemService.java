@@ -7,7 +7,7 @@ import com.example.bootcamp.item.entity.Item;
 
 public interface ItemService {
     // Create operation 
-    Item createItem(float price);
+    Item createItem(float price, String name, int quantity);
 
     // Save operation 
     Item saveItem(Item item); 

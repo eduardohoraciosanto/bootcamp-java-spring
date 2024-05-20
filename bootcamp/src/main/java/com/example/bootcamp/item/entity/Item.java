@@ -20,26 +20,37 @@ public class Item implements Serializable{
     @Id
     private UUID id;
 
+    private String name;
     private int quantity;
     private float price;
 
     @ManyToOne
     private Cart cart;
-    
+
     public Item(){
         this.id = UUID.randomUUID();
+        this.name = "unknown";
     }
 
-    public Item(float price){
+    public Item(float price, String name){
         this.id = UUID.randomUUID();
         this.quantity = 1;
         this.price = price;
+        this.name = name;
     }
 
-    public Item(UUID id, int quantity, float price){
+    public Item(float price, String name, int quantity){
+        this.id = UUID.randomUUID();
+        this.quantity = quantity;
+        this.price = price;
+        this.name = name;
+    }
+
+    public Item(UUID id, int quantity, float price, String name){
         this.id = id;
         this.quantity = quantity;
         this.price = price;
+        this.name = name;
     }
 
     public UUID getID(){
@@ -56,5 +67,9 @@ public class Item implements Serializable{
 
     public float getPrice(){
         return price;
+    }
+
+    public String getName(){
+        return name;
     }
 }
