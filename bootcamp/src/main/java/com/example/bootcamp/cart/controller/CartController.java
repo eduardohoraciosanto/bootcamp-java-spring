@@ -5,6 +5,7 @@ import java.util.UUID;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -37,6 +38,16 @@ public class CartController {
 		return cr;
 	}
 
+    @GetMapping("/cart/{cartId}")
+	public CartRecord getCart(@PathVariable UUID cartId) {
+        log.info("Getting Cart");
+        Cart c = cartService.getCart(cartId);
+
+        CartRecord cr = new CartRecord(c);
+        log.info("[CartID]["+cr.ID().toString()+"]");
+		return cr;
+	}
+
     @PostMapping(path= "/cart/{cartId}/item", consumes = "application/json")
 	public CartRecord addItem(@PathVariable UUID cartId, @RequestBody Item item) {
         log.info("Creating new Item for a Cart");
@@ -47,8 +58,9 @@ public class CartController {
         log.info("New Item created");
         log.info("[ItemID]["+i.getID().toString()+"]");
         
+        c = cartService.addItem(c.getID(),i);
         //Create the record to return based on the updated cart
-        CartRecord cr = new CartRecord(c.addItem(i));
+        CartRecord cr = new CartRecord(c);
         
 		return cr;
 	}
