@@ -1,8 +1,9 @@
-package com.example.bootcamp.cart;
+package com.example.bootcamp.cart.service;
 
 import java.util.UUID;
 
-import com.example.bootcamp.item.Item;
+import com.example.bootcamp.cart.entity.Cart;
+import com.example.bootcamp.item.entity.Item;
 
 public interface CartService {
     // New operation 

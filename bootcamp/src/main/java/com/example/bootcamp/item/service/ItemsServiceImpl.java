@@ -1,10 +1,13 @@
-package com.example.bootcamp.item;
+package com.example.bootcamp.item.service;
 
 import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.example.bootcamp.item.entity.Item;
+import com.example.bootcamp.item.repository.ItemRepository;
 
 @Service
 public class ItemsServiceImpl implements ItemService{

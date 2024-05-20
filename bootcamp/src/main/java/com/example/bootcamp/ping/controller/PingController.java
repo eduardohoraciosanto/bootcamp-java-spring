@@ -1,4 +1,4 @@
-package com.example.bootcamp.ping;
+package com.example.bootcamp.ping.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.bootcamp.interceptors.LoggingInterceptor;
+import com.example.bootcamp.ping.entity.Ping;
 
 @RestController
 public class PingController {

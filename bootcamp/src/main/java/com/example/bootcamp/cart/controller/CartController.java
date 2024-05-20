@@ -1,4 +1,4 @@
-package com.example.bootcamp.cart;
+package com.example.bootcamp.cart.controller;
 
 import java.util.UUID;
 
@@ -10,9 +10,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.bootcamp.cart.entity.Cart;
+import com.example.bootcamp.cart.entity.CartRecord;
+import com.example.bootcamp.cart.service.CartService;
 import com.example.bootcamp.interceptors.LoggingInterceptor;
-import com.example.bootcamp.item.Item;
-import com.example.bootcamp.item.ItemService;
+import com.example.bootcamp.item.entity.Item;
+import com.example.bootcamp.item.service.ItemService;
 
 @RestController
 public class CartController {

@@ -1,13 +1,11 @@
-package com.example.bootcamp.cart;
+package com.example.bootcamp.cart.entity;
 
 import java.util.ArrayList;
 import java.util.UUID;
 
-import com.example.bootcamp.item.Item;
+import com.example.bootcamp.item.entity.Item;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 

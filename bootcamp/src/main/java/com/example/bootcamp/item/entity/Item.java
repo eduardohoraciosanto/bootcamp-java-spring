@@ -1,4 +1,4 @@
-package com.example.bootcamp.item;
+package com.example.bootcamp.item.entity;
 
 import java.util.UUID;
 

@@ -1,11 +1,13 @@
-package com.example.bootcamp.cart;
+package com.example.bootcamp.cart.service;
 
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.bootcamp.item.Item;
+import com.example.bootcamp.cart.entity.Cart;
+import com.example.bootcamp.cart.repository.CartRepository;
+import com.example.bootcamp.item.entity.Item;
 
 @Service
 public class CartServiceImpl implements CartService{
