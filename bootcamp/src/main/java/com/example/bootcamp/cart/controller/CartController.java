@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.HttpClientErrorException.NotFound;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.example.bootcamp.cart.entity.Cart;
@@ -63,9 +62,9 @@ public class CartController {
     @DeleteMapping("/cart/{cartId}")
 	public void deleteCart(@PathVariable UUID cartId) {
         log.info("Getting Cart");
-        Cart c;
+        
         try {
-            c = cartService.getCart(cartId);    
+            cartService.getCart(cartId);    
         } catch (Exception e) {
             log.error("Unable to get Cart", e);
             throw new ResponseStatusException(
