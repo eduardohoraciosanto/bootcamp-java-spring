@@ -3,8 +3,6 @@ package com.example.bootcamp.item.service;
 import java.util.List;
 import java.util.UUID;
 
-import org.springframework.stereotype.Service;
-
 import com.example.bootcamp.item.entity.Item;
 
 public interface ItemService {

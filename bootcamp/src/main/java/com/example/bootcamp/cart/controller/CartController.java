@@ -103,7 +103,7 @@ public class CartController {
 	}
 
     @DeleteMapping(path= "/cart/{cartId}/item/{itemId}")
-	public CartRecord addItem(@PathVariable UUID cartId, @PathVariable UUID itemId) {
+	public CartRecord deleteItem(@PathVariable UUID cartId, @PathVariable UUID itemId) {
         Cart c;
         Item i;
 
