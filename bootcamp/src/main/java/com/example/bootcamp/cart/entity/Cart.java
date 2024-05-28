@@ -43,19 +43,11 @@ public class Cart {
     }
 
     public Cart addItem(Item i){
-        if (this.items == null){
-            this.items = new ArrayList<Item>();
-        }
-        
         this.items.add(i);
         return this;
     }
 
     public Cart removeItem(Item i){
-        if (this.items == null){
-            return this;
-        }
-        
         this.items.remove(i);
         return this;
     }
